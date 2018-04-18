@@ -5,6 +5,7 @@ based on weather forecast
 
 ##Authors 
 Syzonov Oleksandr
+
 ##Builth with
 Google Maps API Python wrapper
 Python wrapper for Open Weather Map API
