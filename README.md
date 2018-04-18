@@ -3,9 +3,9 @@ This project is created to help people with asthma to have better health in a se
 It will have some options to help them to choose a place with weather better for their asthma for a shorth period of time, 
 based on weather forecast
 
-##Authors 
+## Authors 
 Syzonov Oleksandr
 
-##Builth with
+## Builth with
 Google Maps API Python wrapper
 Python wrapper for Open Weather Map API
