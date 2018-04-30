@@ -38,7 +38,7 @@ class Point(object):
         lat2 = radians(lat2)
         a = sin(delta_lat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(delta_lon / 2) ** 2
         c = 2 * asin(sqrt(a))
-        return r*c
+        return r * c
 
     def weather_forecast(self):
         """
@@ -71,9 +71,3 @@ class Point(object):
                 isgood = False
                 self.delta += abs(65 - i) + abs(20 - j)
         return isgood
-
-
-if __name__ == "__main__":
-    k = Point('Drohobych', 49.358012, 23.512319 )
-    print(k.is_good())
-    print(k.delta)
