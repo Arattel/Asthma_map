@@ -34,7 +34,7 @@ def find_best_coord(city, lat, lng, radius):
             if is_good:
                 return x[0].name
             result.append(x[0])
-        except:
+        except Exception:
             pass
     result = min(result, key=lambda x: x.delta)
     return "{0}, {1} km away".format(result.name, round(result.find_distance(Point(city, lat, lng)), 2))
@@ -61,6 +61,7 @@ def input_city_radius():
     address = "{0}, {1}".format(city, country)
     radius = float(input("Please, input radius: "))
     return (address, radius)
+
 
 def main():
     """
