@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS = false; L_NO_TOUCH = false; L_DISABLE_3D = false;</script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.2.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawgit.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <style> #map_b85a6bfcb77e4e8cb36c4089806fd2e0 {
+                position : relative;
+                width : 100.0%;
+                height: 100.0%;
+                left: 0.0%;
+                top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_b85a6bfcb77e4e8cb36c4089806fd2e0" ></div>
+        
+</body>
+<script>    
+    
+
+            
+                var bounds = null;
+            
+
+            var map_b85a6bfcb77e4e8cb36c4089806fd2e0 = L.map(
+                                  'map_b85a6bfcb77e4e8cb36c4089806fd2e0',
+                                  {center: [38.5815719,-121.4943996],
+                                  zoom: 5,
+                                  maxBounds: bounds,
+                                  layers: [],
+                                  worldCopyJump: false,
+                                  crs: L.CRS.EPSG3857
+                                 });
+            
+        
+    
+            var tile_layer_658ea8318b8a4a0cb2068590b0759369 = L.tileLayer(
+                'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                {
+  "attribution": null,
+  "detectRetina": false,
+  "maxZoom": 18,
+  "minZoom": 1,
+  "noWrap": false,
+  "subdomains": "abc"
+}
+                ).addTo(map_b85a6bfcb77e4e8cb36c4089806fd2e0);
+        
+    
+
+            var marker_d081b95058ea46089bcdcc4ae59e02c7 = L.marker(
+                [38.5815719,-121.4943996],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b85a6bfcb77e4e8cb36c4089806fd2e0);
+            
+    
+
+                var icon_e18c8c2356a84bae9f13382ebe084a3f = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_d081b95058ea46089bcdcc4ae59e02c7.setIcon(icon_e18c8c2356a84bae9f13382ebe084a3f);
+            
+    
+            var popup_d622e770a1634c0c808c66e43c805364 = L.popup({maxWidth: '300'});
+
+            
+                var html_2fa21ce6bc2945ff8c3d71087de71b66 = $('<div id="html_2fa21ce6bc2945ff8c3d71087de71b66" style="width: 100.0%; height: 100.0%;">Sacramento, USA</div>')[0];
+                popup_d622e770a1634c0c808c66e43c805364.setContent(html_2fa21ce6bc2945ff8c3d71087de71b66);
+            
+
+            marker_d081b95058ea46089bcdcc4ae59e02c7.bindPopup(popup_d622e770a1634c0c808c66e43c805364);
+
+            
+        
+    
+
+            var marker_a5312f57d57f47f1a1b82837725571fa = L.marker(
+                [52.05040041,-107.9832902],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_b85a6bfcb77e4e8cb36c4089806fd2e0);
+            
+    
+
+                var icon_f6818cdc98604eeebbb23f790d8bd705 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_a5312f57d57f47f1a1b82837725571fa.setIcon(icon_f6818cdc98604eeebbb23f790d8bd705);
+            
+    
+            var popup_c8a6436dbd394ebdb526f60e8d773165 = L.popup({maxWidth: '300'});
+
+            
+                var html_b99842b4e4d34b3e9e86e1eb84357c60 = $('<div id="html_b99842b4e4d34b3e9e86e1eb84357c60" style="width: 100.0%; height: 100.0%;">Biggar</div>')[0];
+                popup_c8a6436dbd394ebdb526f60e8d773165.setContent(html_b99842b4e4d34b3e9e86e1eb84357c60);
+            
+
+            marker_a5312f57d57f47f1a1b82837725571fa.bindPopup(popup_c8a6436dbd394ebdb526f60e8d773165);
+
+            
+        
+    
+                var poly_line_0a472a30f2a9443f836e69831c6823f0 = L.polyline(
+                    [[38.5815719, -121.4943996], [52.05040041, -107.9832902]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "green",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "green",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 1,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 5
+}).addTo(map_b85a6bfcb77e4e8cb36c4089806fd2e0);
+            
+    
+            var popup_71f0262204de42a290a84e4f39a56918 = L.popup({maxWidth: '300'});
+
+            
+                var html_d4c1ec094bfd45f7872fde7cbcb4cdeb = $('<div id="html_d4c1ec094bfd45f7872fde7cbcb4cdeb" style="width: 100.0%; height: 100.0%;">1826.340189484966 km</div>')[0];
+                popup_71f0262204de42a290a84e4f39a56918.setContent(html_d4c1ec094bfd45f7872fde7cbcb4cdeb);
+            
+
+            poly_line_0a472a30f2a9443f836e69831c6823f0.bindPopup(popup_71f0262204de42a290a84e4f39a56918);
+
+            
+        
+</script>

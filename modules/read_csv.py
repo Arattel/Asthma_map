@@ -1,11 +1,12 @@
+import folium
+import googlemaps
+import pandas
+
 from point import Point
 from possible_points import PossiblePoints
-import pandas
-import googlemaps
-import time
 
 
-def read_csv(name = 'simplemaps-worldcities-basic.csv'):
+def read_csv(name='simplemaps-worldcities-basic.csv'):
     """
     (str) -> (PossiblePoints)
     This function reads a .csv file and returns PossiblePoints object
@@ -32,12 +33,12 @@ def find_best_coord(city, lat, lng, radius):
         try:
             is_good = x[0].is_good()
             if is_good:
-                return x[0].name
+                return x[0], Point(city, lat, lng)
             result.append(x[0])
         except Exception:
             pass
     result = min(result, key=lambda x: x.delta)
-    return "{0}, {1} km away".format(result.name, round(result.find_distance(Point(city, lat, lng)), 2))
+    return result, Point(city, lat, lng)
 
 
 def find_best(city, radius):
@@ -70,4 +71,19 @@ def main():
     """
     city, radius = input_city_radius()
     print(find_best(city, radius))
-main()
+
+
+def create_template(cities, ind):
+    start = cities[1]
+    end = cities[0]
+    map_1 = folium.Map(location=[start.lat, start.lon], zoom_start=5)
+    folium.Marker([start.lat, start.lon], popup=start.name, icon=folium.Icon(icon='info-sign', color='red')).add_to(
+        map_1)
+    folium.Marker([end.lat, end.lon], popup=end.name, icon=folium.Icon(icon='info-sign', color='green')).add_to(map_1)
+    folium.PolyLine([(start.lat, start.lon), (end.lat, end.lon)], color="green", weight=5, opacity=1,
+                    popup=str(start.find_distance(end)) + ' km').add_to(map_1)
+    map_1.save('templates/map{}.html'.format(ind))
+
+
+if __name__ == '__main__':
+    create_template(find_best('Lviv, Ukraine', 190))

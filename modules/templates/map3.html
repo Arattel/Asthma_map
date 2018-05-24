@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS = false; L_NO_TOUCH = false; L_DISABLE_3D = false;</script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.2.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawgit.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <style> #map_7c055ac4a00a4285b2d0c5f44adae852 {
+                position : relative;
+                width : 100.0%;
+                height: 100.0%;
+                left: 0.0%;
+                top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_7c055ac4a00a4285b2d0c5f44adae852" ></div>
+        
+</body>
+<script>    
+    
+
+            
+                var bounds = null;
+            
+
+            var map_7c055ac4a00a4285b2d0c5f44adae852 = L.map(
+                                  'map_7c055ac4a00a4285b2d0c5f44adae852',
+                                  {center: [52.52000659999999,13.404954],
+                                  zoom: 5,
+                                  maxBounds: bounds,
+                                  layers: [],
+                                  worldCopyJump: false,
+                                  crs: L.CRS.EPSG3857
+                                 });
+            
+        
+    
+            var tile_layer_44e87dd852084de1a250545eb9a28314 = L.tileLayer(
+                'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                {
+  "attribution": null,
+  "detectRetina": false,
+  "maxZoom": 18,
+  "minZoom": 1,
+  "noWrap": false,
+  "subdomains": "abc"
+}
+                ).addTo(map_7c055ac4a00a4285b2d0c5f44adae852);
+        
+    
+
+            var marker_7753561198f642ed9cbf2f52d86cc7ac = L.marker(
+                [52.52000659999999,13.404954],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7c055ac4a00a4285b2d0c5f44adae852);
+            
+    
+
+                var icon_7ee89ead086549c7b09a7c373cecb661 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_7753561198f642ed9cbf2f52d86cc7ac.setIcon(icon_7ee89ead086549c7b09a7c373cecb661);
+            
+    
+            var popup_ddcc25a47e3c47829d67d4af0365654e = L.popup({maxWidth: '300'});
+
+            
+                var html_f3c7990040b34043a066190e3e0563c6 = $('<div id="html_f3c7990040b34043a066190e3e0563c6" style="width: 100.0%; height: 100.0%;">Berlin, Germany</div>')[0];
+                popup_ddcc25a47e3c47829d67d4af0365654e.setContent(html_f3c7990040b34043a066190e3e0563c6);
+            
+
+            marker_7753561198f642ed9cbf2f52d86cc7ac.bindPopup(popup_ddcc25a47e3c47829d67d4af0365654e);
+
+            
+        
+    
+
+            var marker_3b45c8f5b4f645ce8f0958c3fcb39f8a = L.marker(
+                [52.52181866,13.40154862],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(map_7c055ac4a00a4285b2d0c5f44adae852);
+            
+    
+
+                var icon_fa11f3ce31764815aa0fa5eb81313cf6 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_3b45c8f5b4f645ce8f0958c3fcb39f8a.setIcon(icon_fa11f3ce31764815aa0fa5eb81313cf6);
+            
+    
+            var popup_f719b1b969c742208113d92c9aefa1c2 = L.popup({maxWidth: '300'});
+
+            
+                var html_7e317b492537499fbb7f5fbe48bf4871 = $('<div id="html_7e317b492537499fbb7f5fbe48bf4871" style="width: 100.0%; height: 100.0%;">Berlin</div>')[0];
+                popup_f719b1b969c742208113d92c9aefa1c2.setContent(html_7e317b492537499fbb7f5fbe48bf4871);
+            
+
+            marker_3b45c8f5b4f645ce8f0958c3fcb39f8a.bindPopup(popup_f719b1b969c742208113d92c9aefa1c2);
+
+            
+        
+    
+                var poly_line_5de9ad4933154f1fba1684075bfdcbe4 = L.polyline(
+                    [[52.52000659999999, 13.404954], [52.52181866, 13.40154862]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "green",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "green",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 1,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 5
+}).addTo(map_7c055ac4a00a4285b2d0c5f44adae852);
+            
+    
+            var popup_b9fac2c8610b4c6b8706863c3eaf6a2f = L.popup({maxWidth: '300'});
+
+            
+                var html_a6bc61cc690849e98e0dca7057e67593 = $('<div id="html_a6bc61cc690849e98e0dca7057e67593" style="width: 100.0%; height: 100.0%;">0.30608042549176945 km</div>')[0];
+                popup_b9fac2c8610b4c6b8706863c3eaf6a2f.setContent(html_a6bc61cc690849e98e0dca7057e67593);
+            
+
+            poly_line_5de9ad4933154f1fba1684075bfdcbe4.bindPopup(popup_b9fac2c8610b4c6b8706863c3eaf6a2f);
+
+            
+        
+</script>
