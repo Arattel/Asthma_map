@@ -1,10 +1,52 @@
 <html>
     <head>
+        <style>
+            .button{
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.37);
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.698) inset, 0 1px 0 0 rgba(0, 0, 0, 0.075);
+    color: #595959;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    margin: 0;
+    padding: 8px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #FFFFFF;
+    transition: all 0.2s ease 0s;
+    vertical-align: middle;
+}
+.button:hover {
+    background-color: #F6F6F6;
+    outline: medium none;
+}
+.button:focus{
+    outline: medium none;
+}
+.button:active, .button.active {
+    background-color: #DDDDDD;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.075) inset;
+    outline: medium none;
+    transition: none 0s ease 0s;
+}
+ </style>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <title>Питання</title>
     </head>
-    <body allign  = 'center'>
+    <body allign  = 'center' style="margin-top: 300px">
+    <center>
+        <big style="font-size: 78">Asthma map</big>
+        <br>
+        <a href="static/instructions.html"; style="margin-left: 350">How to use it?</a>
       <h1>Please, enter town, country and radius</h1>
-      <form action="/result" method="POST">
+      <form action="/result" method="POST" >
           <h4>Town</h4>
         <input type="text" name="town"/>
           <h4>Country</h4>
@@ -12,7 +54,8 @@
           <h4>Radius</h4>
           <input type="text" name="radius"/>
           <p></p>
-        <input type="submit"  value="Submit"/>
+        <input type="submit"  value="Submit" class="button"/>
       </form>
+    </center>
     </body>
 </html>

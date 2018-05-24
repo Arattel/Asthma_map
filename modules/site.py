@@ -26,6 +26,6 @@ def take_data():
 
 
 if __name__ == "__main__":
-    open_new_tab('http://localhost:5000')
     app.run(port=5000)
+    open_new_tab("localhost:5000")
 

@@ -74,6 +74,10 @@ def main():
 
 
 def create_template(cities, ind):
+    """
+    (tuple, int) -> None
+    Creates a template with 2 Point objects given in tuple and  index of html file
+    """
     start = cities[1]
     end = cities[0]
     map_1 = folium.Map(location=[start.lat, start.lon], zoom_start=5)

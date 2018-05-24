@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>read_csv</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >asthma</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Module&nbsp;read_csv
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="read_csv-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="read_csv-module.html">Module read_csv</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">folium</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">googlemaps</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">pandas</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Module point=point-module.html"><a title="point" class="py-name" href="#" onclick="return doclink('link-0', 'point', 'link-0');">point</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Class point.Point=point.Point-class.html"><a title="point.Point" class="py-name" href="#" onclick="return doclink('link-1', 'Point', 'link-1');">Point</a></tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-2" class="py-name" targets="Module possible_points=possible_points-module.html"><a title="possible_points" class="py-name" href="#" onclick="return doclink('link-2', 'possible_points', 'link-2');">possible_points</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name" targets="Class possible_points.PossiblePoints=possible_points.PossiblePoints-class.html"><a title="possible_points.PossiblePoints" class="py-name" href="#" onclick="return doclink('link-3', 'PossiblePoints', 'link-3');">PossiblePoints</a></tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"> </tt>
+<a name="read_csv"></a><div id="read_csv-def"><a name="L9"></a><tt class="py-lineno"> 9</tt> <a class="py-toggle" href="#" id="read_csv-toggle" onclick="return toggle('read_csv');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="read_csv-module.html#read_csv">read_csv</a><tt class="py-op">(</tt><tt class="py-param">name</tt><tt class="py-op">=</tt><tt class="py-string">'simplemaps-worldcities-basic.csv'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="read_csv-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="read_csv-expanded"><a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-docstring">    (str) -&gt; (PossiblePoints)</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-docstring">    This function reads a .csv file and returns PossiblePoints object</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">    <tt class="py-name">points_data</tt> <tt class="py-op">=</tt> <tt class="py-name">pandas</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Module read_csv=read_csv-module.html,Function read_csv.read_csv()=read_csv-module.html#read_csv"><a title="read_csv
+read_csv.read_csv" class="py-name" href="#" onclick="return doclink('link-4', 'read_csv', 'link-4');">read_csv</a></tt><tt class="py-op">(</tt><tt class="py-name">name</tt><tt class="py-op">)</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">    <tt class="py-name">possible</tt> <tt class="py-op">=</tt> <tt id="link-5" class="py-name"><a title="possible_points.PossiblePoints" class="py-name" href="#" onclick="return doclink('link-5', 'PossiblePoints', 'link-3');">PossiblePoints</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">    <tt class="py-name">cities</tt> <tt class="py-op">=</tt> <tt class="py-name">points_data</tt><tt class="py-op">[</tt><tt class="py-string">'city_ascii'</tt><tt class="py-op">]</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">    <tt class="py-name">latitudes</tt> <tt class="py-op">=</tt> <tt class="py-name">points_data</tt><tt class="py-op">[</tt><tt class="py-string">'lat'</tt><tt class="py-op">]</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">    <tt class="py-name">longitudes</tt> <tt class="py-op">=</tt> <tt class="py-name">points_data</tt><tt class="py-op">[</tt><tt class="py-string">'lng'</tt><tt class="py-op">]</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">cities</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">        <tt class="py-name">possible</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Method possible_points.PossiblePoints.add_point()=possible_points.PossiblePoints-class.html#add_point"><a title="possible_points.PossiblePoints.add_point" class="py-name" href="#" onclick="return doclink('link-6', 'add_point', 'link-6');">add_point</a></tt><tt class="py-op">(</tt><tt id="link-7" class="py-name"><a title="point.Point" class="py-name" href="#" onclick="return doclink('link-7', 'Point', 'link-1');">Point</a></tt><tt class="py-op">(</tt><tt class="py-name">cities</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">latitudes</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">longitudes</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">possible</tt> </tt>
+</div><a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"> </tt>
+<a name="find_best_coord"></a><div id="find_best_coord-def"><a name="L24"></a><tt class="py-lineno">24</tt> <a class="py-toggle" href="#" id="find_best_coord-toggle" onclick="return toggle('find_best_coord');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="read_csv-module.html#find_best_coord">find_best_coord</a><tt class="py-op">(</tt><tt class="py-param">city</tt><tt class="py-op">,</tt> <tt class="py-param">lat</tt><tt class="py-op">,</tt> <tt class="py-param">lng</tt><tt class="py-op">,</tt> <tt class="py-param">radius</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="find_best_coord-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="find_best_coord-expanded"><a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"><tt class="py-docstring">    (str, float, float) -&gt; (str)</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"><tt class="py-docstring">    This function inputs a city, its latitude, its longitude and radius of search and returns a best city to live in</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"><tt class="py-docstring">    given radius</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">    <tt class="py-name">cities_500km</tt> <tt class="py-op">=</tt> <tt id="link-8" class="py-name"><a title="read_csv
+read_csv.read_csv" class="py-name" href="#" onclick="return doclink('link-8', 'read_csv', 'link-4');">read_csv</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Method possible_points.PossiblePoints.distance_list()=possible_points.PossiblePoints-class.html#distance_list"><a title="possible_points.PossiblePoints.distance_list" class="py-name" href="#" onclick="return doclink('link-9', 'distance_list', 'link-9');">distance_list</a></tt><tt class="py-op">(</tt><tt id="link-10" class="py-name"><a title="point.Point" class="py-name" href="#" onclick="return doclink('link-10', 'Point', 'link-1');">Point</a></tt><tt class="py-op">(</tt><tt class="py-name">city</tt><tt class="py-op">,</tt> <tt class="py-name">lat</tt><tt class="py-op">,</tt> <tt class="py-name">lng</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">radius</tt><tt class="py-op">=</tt><tt class="py-name">radius</tt><tt class="py-op">)</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">    <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">x</tt> <tt class="py-keyword">in</tt> <tt class="py-name">cities_500km</tt><tt class="py-op">:</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">            <tt id="link-11" class="py-name" targets="Method point.Point.is_good()=point.Point-class.html#is_good"><a title="point.Point.is_good" class="py-name" href="#" onclick="return doclink('link-11', 'is_good', 'link-11');">is_good</a></tt> <tt class="py-op">=</tt> <tt class="py-name">x</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name"><a title="point.Point.is_good" class="py-name" href="#" onclick="return doclink('link-12', 'is_good', 'link-11');">is_good</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt id="link-13" class="py-name"><a title="point.Point.is_good" class="py-name" href="#" onclick="return doclink('link-13', 'is_good', 'link-11');">is_good</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">x</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt id="link-14" class="py-name"><a title="point.Point" class="py-name" href="#" onclick="return doclink('link-14', 'Point', 'link-1');">Point</a></tt><tt class="py-op">(</tt><tt class="py-name">city</tt><tt class="py-op">,</tt> <tt class="py-name">lat</tt><tt class="py-op">,</tt> <tt class="py-name">lng</tt><tt class="py-op">)</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">            <tt class="py-name">result</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">x</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">:</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">            <tt class="py-keyword">pass</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">    <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-name">min</tt><tt class="py-op">(</tt><tt class="py-name">result</tt><tt class="py-op">,</tt> <tt class="py-name">key</tt><tt class="py-op">=</tt><tt class="py-keyword">lambda</tt> <tt class="py-name">x</tt><tt class="py-op">:</tt> <tt class="py-name">x</tt><tt class="py-op">.</tt><tt class="py-name">delta</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">result</tt><tt class="py-op">,</tt> <tt id="link-15" class="py-name"><a title="point.Point" class="py-name" href="#" onclick="return doclink('link-15', 'Point', 'link-1');">Point</a></tt><tt class="py-op">(</tt><tt class="py-name">city</tt><tt class="py-op">,</tt> <tt class="py-name">lat</tt><tt class="py-op">,</tt> <tt class="py-name">lng</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line"> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line"> </tt>
+<a name="find_best"></a><div id="find_best-def"><a name="L44"></a><tt class="py-lineno">44</tt> <a class="py-toggle" href="#" id="find_best-toggle" onclick="return toggle('find_best');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="read_csv-module.html#find_best">find_best</a><tt class="py-op">(</tt><tt class="py-param">city</tt><tt class="py-op">,</tt> <tt class="py-param">radius</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="find_best-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="find_best-expanded"><a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line"><tt class="py-docstring">    (str, float) -&gt; (str)</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"><tt class="py-docstring">    This function inputs city name and radius and finds a best possible city inside radius</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">    <tt class="py-name">gmaps</tt> <tt class="py-op">=</tt> <tt class="py-name">googlemaps</tt><tt class="py-op">.</tt><tt class="py-name">Client</tt><tt class="py-op">(</tt><tt class="py-name">key</tt><tt class="py-op">=</tt><tt class="py-string">'AIzaSyAhBzKOrjhfJO22CLf7uNzW8hF57z9EmdI'</tt><tt class="py-op">)</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">    <tt class="py-name">geocode_result</tt> <tt class="py-op">=</tt> <tt class="py-name">gmaps</tt><tt class="py-op">.</tt><tt class="py-name">geocode</tt><tt class="py-op">(</tt><tt class="py-name">city</tt><tt class="py-op">)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">    <tt class="py-name">coord</tt> <tt class="py-op">=</tt> <tt class="py-name">geocode_result</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-string">'geometry'</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-string">'location'</tt><tt class="py-op">]</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-16" class="py-name" targets="Function read_csv.find_best_coord()=read_csv-module.html#find_best_coord"><a title="read_csv.find_best_coord" class="py-name" href="#" onclick="return doclink('link-16', 'find_best_coord', 'link-16');">find_best_coord</a></tt><tt class="py-op">(</tt><tt class="py-name">city</tt><tt class="py-op">,</tt> <tt class="py-name">coord</tt><tt class="py-op">[</tt><tt class="py-string">'lat'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">coord</tt><tt class="py-op">[</tt><tt class="py-string">'lng'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">radius</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line"> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line"> </tt>
+<a name="input_city_radius"></a><div id="input_city_radius-def"><a name="L55"></a><tt class="py-lineno">55</tt> <a class="py-toggle" href="#" id="input_city_radius-toggle" onclick="return toggle('input_city_radius');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="read_csv-module.html#input_city_radius">input_city_radius</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="input_city_radius-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="input_city_radius-expanded"><a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line"><tt class="py-docstring">    () -&gt; (str, float)</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line"><tt class="py-docstring">    This function inputs city and radius</tt> </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">    <tt class="py-name">city</tt> <tt class="py-op">=</tt> <tt class="py-name">input</tt><tt class="py-op">(</tt><tt class="py-string">'Please, input city: '</tt><tt class="py-op">)</tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">    <tt class="py-name">country</tt> <tt class="py-op">=</tt> <tt class="py-name">input</tt><tt class="py-op">(</tt><tt class="py-string">'Please, input country: '</tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line">    <tt class="py-name">address</tt> <tt class="py-op">=</tt> <tt class="py-string">"{0}, {1}"</tt><tt class="py-op">.</tt><tt class="py-name">format</tt><tt class="py-op">(</tt><tt class="py-name">city</tt><tt class="py-op">,</tt> <tt class="py-name">country</tt><tt class="py-op">)</tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line">    <tt class="py-name">radius</tt> <tt class="py-op">=</tt> <tt class="py-name">float</tt><tt class="py-op">(</tt><tt class="py-name">input</tt><tt class="py-op">(</tt><tt class="py-string">"Please, input radius: "</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt class="py-name">address</tt><tt class="py-op">,</tt> <tt class="py-name">radius</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line"> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line"> </tt>
+<a name="main"></a><div id="main-def"><a name="L67"></a><tt class="py-lineno">67</tt> <a class="py-toggle" href="#" id="main-toggle" onclick="return toggle('main');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="read_csv-module.html#main">main</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="main-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="main-expanded"><a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line"><tt class="py-docstring">    () -&gt; None</tt> </tt>
+<a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line"><tt class="py-docstring">    This function find a best place and outputs it</tt> </tt>
+<a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line">    <tt class="py-name">city</tt><tt class="py-op">,</tt> <tt class="py-name">radius</tt> <tt class="py-op">=</tt> <tt id="link-17" class="py-name" targets="Function read_csv.input_city_radius()=read_csv-module.html#input_city_radius"><a title="read_csv.input_city_radius" class="py-name" href="#" onclick="return doclink('link-17', 'input_city_radius', 'link-17');">input_city_radius</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt id="link-18" class="py-name" targets="Function read_csv.find_best()=read_csv-module.html#find_best"><a title="read_csv.find_best" class="py-name" href="#" onclick="return doclink('link-18', 'find_best', 'link-18');">find_best</a></tt><tt class="py-op">(</tt><tt class="py-name">city</tt><tt class="py-op">,</tt> <tt class="py-name">radius</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line"> </tt>
+<a name="L75"></a><tt class="py-lineno">75</tt>  <tt class="py-line"> </tt>
+<a name="create_template"></a><div id="create_template-def"><a name="L76"></a><tt class="py-lineno">76</tt> <a class="py-toggle" href="#" id="create_template-toggle" onclick="return toggle('create_template');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="read_csv-module.html#create_template">create_template</a><tt class="py-op">(</tt><tt class="py-param">cities</tt><tt class="py-op">,</tt> <tt class="py-param">ind</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="create_template-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="create_template-expanded"><a name="L77"></a><tt class="py-lineno">77</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L78"></a><tt class="py-lineno">78</tt>  <tt class="py-line"><tt class="py-docstring">    (tuple, int) -&gt; None</tt> </tt>
+<a name="L79"></a><tt class="py-lineno">79</tt>  <tt class="py-line"><tt class="py-docstring">    Creates a template with 2 Point objects given in tuple and  index of html file</tt> </tt>
+<a name="L80"></a><tt class="py-lineno">80</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L81"></a><tt class="py-lineno">81</tt>  <tt class="py-line">    <tt id="link-19" class="py-name" targets="Function site.start()=site-module.html#start"><a title="site.start" class="py-name" href="#" onclick="return doclink('link-19', 'start', 'link-19');">start</a></tt> <tt class="py-op">=</tt> <tt class="py-name">cities</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L82"></a><tt class="py-lineno">82</tt>  <tt class="py-line">    <tt class="py-name">end</tt> <tt class="py-op">=</tt> <tt class="py-name">cities</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L83"></a><tt class="py-lineno">83</tt>  <tt class="py-line">    <tt class="py-name">map_1</tt> <tt class="py-op">=</tt> <tt class="py-name">folium</tt><tt class="py-op">.</tt><tt class="py-name">Map</tt><tt class="py-op">(</tt><tt class="py-name">location</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt id="link-20" class="py-name"><a title="site.start" class="py-name" href="#" onclick="return doclink('link-20', 'start', 'link-19');">start</a></tt><tt class="py-op">.</tt><tt class="py-name">lat</tt><tt class="py-op">,</tt> <tt id="link-21" class="py-name"><a title="site.start" class="py-name" href="#" onclick="return doclink('link-21', 'start', 'link-19');">start</a></tt><tt class="py-op">.</tt><tt class="py-name">lon</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">zoom_start</tt><tt class="py-op">=</tt><tt class="py-number">5</tt><tt class="py-op">)</tt> </tt>
+<a name="L84"></a><tt class="py-lineno">84</tt>  <tt class="py-line">    <tt class="py-name">folium</tt><tt class="py-op">.</tt><tt class="py-name">Marker</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt id="link-22" class="py-name"><a title="site.start" class="py-name" href="#" onclick="return doclink('link-22', 'start', 'link-19');">start</a></tt><tt class="py-op">.</tt><tt class="py-name">lat</tt><tt class="py-op">,</tt> <tt id="link-23" class="py-name"><a title="site.start" class="py-name" href="#" onclick="return doclink('link-23', 'start', 'link-19');">start</a></tt><tt class="py-op">.</tt><tt class="py-name">lon</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">popup</tt><tt class="py-op">=</tt><tt id="link-24" class="py-name"><a title="site.start" class="py-name" href="#" onclick="return doclink('link-24', 'start', 'link-19');">start</a></tt><tt class="py-op">.</tt><tt class="py-name">name</tt><tt class="py-op">,</tt> <tt class="py-name">icon</tt><tt class="py-op">=</tt><tt class="py-name">folium</tt><tt class="py-op">.</tt><tt class="py-name">Icon</tt><tt class="py-op">(</tt><tt class="py-name">icon</tt><tt class="py-op">=</tt><tt class="py-string">'info-sign'</tt><tt class="py-op">,</tt> <tt class="py-name">color</tt><tt class="py-op">=</tt><tt class="py-string">'red'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">add_to</tt><tt class="py-op">(</tt> </tt>
+<a name="L85"></a><tt class="py-lineno">85</tt>  <tt class="py-line">        <tt class="py-name">map_1</tt><tt class="py-op">)</tt> </tt>
+<a name="L86"></a><tt class="py-lineno">86</tt>  <tt class="py-line">    <tt class="py-name">folium</tt><tt class="py-op">.</tt><tt class="py-name">Marker</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-name">end</tt><tt class="py-op">.</tt><tt class="py-name">lat</tt><tt class="py-op">,</tt> <tt class="py-name">end</tt><tt class="py-op">.</tt><tt class="py-name">lon</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">popup</tt><tt class="py-op">=</tt><tt class="py-name">end</tt><tt class="py-op">.</tt><tt class="py-name">name</tt><tt class="py-op">,</tt> <tt class="py-name">icon</tt><tt class="py-op">=</tt><tt class="py-name">folium</tt><tt class="py-op">.</tt><tt class="py-name">Icon</tt><tt class="py-op">(</tt><tt class="py-name">icon</tt><tt class="py-op">=</tt><tt class="py-string">'info-sign'</tt><tt class="py-op">,</tt> <tt class="py-name">color</tt><tt class="py-op">=</tt><tt class="py-string">'green'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">add_to</tt><tt class="py-op">(</tt><tt class="py-name">map_1</tt><tt class="py-op">)</tt> </tt>
+<a name="L87"></a><tt class="py-lineno">87</tt>  <tt class="py-line">    <tt class="py-name">folium</tt><tt class="py-op">.</tt><tt class="py-name">PolyLine</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-op">(</tt><tt id="link-25" class="py-name"><a title="site.start" class="py-name" href="#" onclick="return doclink('link-25', 'start', 'link-19');">start</a></tt><tt class="py-op">.</tt><tt class="py-name">lat</tt><tt class="py-op">,</tt> <tt id="link-26" class="py-name"><a title="site.start" class="py-name" href="#" onclick="return doclink('link-26', 'start', 'link-19');">start</a></tt><tt class="py-op">.</tt><tt class="py-name">lon</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-name">end</tt><tt class="py-op">.</tt><tt class="py-name">lat</tt><tt class="py-op">,</tt> <tt class="py-name">end</tt><tt class="py-op">.</tt><tt class="py-name">lon</tt><tt class="py-op">)</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">color</tt><tt class="py-op">=</tt><tt class="py-string">"green"</tt><tt class="py-op">,</tt> <tt class="py-name">weight</tt><tt class="py-op">=</tt><tt class="py-number">5</tt><tt class="py-op">,</tt> <tt class="py-name">opacity</tt><tt class="py-op">=</tt><tt class="py-number">1</tt><tt class="py-op">,</tt> </tt>
+<a name="L88"></a><tt class="py-lineno">88</tt>  <tt class="py-line">                    <tt class="py-name">popup</tt><tt class="py-op">=</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt id="link-27" class="py-name"><a title="site.start" class="py-name" href="#" onclick="return doclink('link-27', 'start', 'link-19');">start</a></tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Method point.Point.find_distance()=point.Point-class.html#find_distance"><a title="point.Point.find_distance" class="py-name" href="#" onclick="return doclink('link-28', 'find_distance', 'link-28');">find_distance</a></tt><tt class="py-op">(</tt><tt class="py-name">end</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">' km'</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">add_to</tt><tt class="py-op">(</tt><tt class="py-name">map_1</tt><tt class="py-op">)</tt> </tt>
+<a name="L89"></a><tt class="py-lineno">89</tt>  <tt class="py-line">    <tt class="py-name">map_1</tt><tt class="py-op">.</tt><tt class="py-name">save</tt><tt class="py-op">(</tt><tt class="py-string">'templates/map{}.html'</tt><tt class="py-op">.</tt><tt class="py-name">format</tt><tt class="py-op">(</tt><tt id="link-29" class="py-name" targets="Variable site.ind=site-module.html#ind"><a title="site.ind" class="py-name" href="#" onclick="return doclink('link-29', 'ind', 'link-29');">ind</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L90"></a><tt class="py-lineno">90</tt>  <tt class="py-line"> </tt>
+<a name="L91"></a><tt class="py-lineno">91</tt>  <tt class="py-line"> </tt>
+<a name="L92"></a><tt class="py-lineno">92</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">__name__</tt> <tt class="py-op">==</tt> <tt class="py-string">'__main__'</tt><tt class="py-op">:</tt> </tt>
+<a name="L93"></a><tt class="py-lineno">93</tt>  <tt class="py-line">    <tt id="link-30" class="py-name" targets="Function read_csv.create_template()=read_csv-module.html#create_template"><a title="read_csv.create_template" class="py-name" href="#" onclick="return doclink('link-30', 'create_template', 'link-30');">create_template</a></tt><tt class="py-op">(</tt><tt id="link-31" class="py-name"><a title="read_csv.find_best" class="py-name" href="#" onclick="return doclink('link-31', 'find_best', 'link-18');">find_best</a></tt><tt class="py-op">(</tt><tt class="py-string">'Lviv, Ukraine'</tt><tt class="py-op">,</tt> <tt class="py-number">190</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L94"></a><tt class="py-lineno">94</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >asthma</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Thu May 24 18:51:06 2018
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
